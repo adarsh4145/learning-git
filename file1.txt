@@ -1,1 +1,2 @@
 hello
+funcat file1.txt !
