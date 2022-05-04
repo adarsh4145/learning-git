@@ -1,0 +1,198 @@
+{
+	"info": {
+		"_postman_id": "59149b46-5a9a-4747-9250-f71fa348c1d0",
+		"name": "quarkus",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "get all user",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "{{token-name}}",
+						"value": "{{token-value}}",
+						"type": "default"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJodHRwczovL2V4YW1wbGUuY29tL2lzc3VlciIsInVwbiI6Impkb2VAcXVhcmt1cy5pbyIsImJpcnRoZGF0ZSI6IjIwMDEtMDctMTMiLCJmdWxsX25hbWUiOiJtaWtlIiwiaWF0IjoxNjUxNjM4MDkzLCJleHAiOjE2NTIwNzAwOTMsImp0aSI6Ijc5Yjk4ZmE1LWVmY2ItNGZiZi05NzI1LWZlYTNiZjVjNTg3NiJ9.Fn7untBFcoJCtkBnyODWYMj573YNXAiWegegm3SCYCI",
+						"type": "default"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{local-url}}/users",
+					"host": [
+						"{{local-url}}"
+					],
+					"path": [
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get user by name",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "{{token-name}}",
+						"value": "{{token-value}}",
+						"type": "default"
+					}
+				],
+				"url": {
+					"raw": "{{local-url}}/users/12",
+					"host": [
+						"{{local-url}}"
+					],
+					"path": [
+						"users",
+						"12"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "create user",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "{{token-name}}",
+						"value": "{{token-value}}",
+						"type": "default"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"rick\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{local-url}}/users",
+					"host": [
+						"{{local-url}}"
+					],
+					"path": [
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get token",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJodHRwczovL2V4YW1wbGUuY29tL2lzc3VlciIsInVwbiI6Impkb2VAcXVhcmt1cy5pbyIsImdyb3VwcyI6WyJVc2VyIiwiQWRtaW4iXSwiYmlydGhkYXRlIjoiMjAwMS0wNy0xMyIsImlhdCI6MTY1MTU2MTQ2OCwiZXhwIjoxNjUxNTYxNzY4LCJqdGkiOiIzNmIwN2Y0YS04N2EwLTRkNGItOGIzMC02MjI1ZmJmNmQxMTYifQ.BO91oqHuAEtGNcPPeezmqLKPJhMc-J70RbIJsnOC-xU",
+						"type": "default",
+						"disabled": true
+					}
+				],
+				"url": {
+					"raw": "{{local-url}}/secured/get-token/mike",
+					"host": [
+						"{{local-url}}"
+					],
+					"path": [
+						"secured",
+						"get-token",
+						"mike"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "authenticated, to test token",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "{{token-name}}",
+						"value": "{{token-value}}",
+						"type": "default"
+					},
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJodHRwczovL2V4YW1wbGUuY29tL2lzc3VlciIsInVwbiI6Impkb2VAcXVhcmt1cy5pbyIsImdyb3VwcyI6WyJVc2VyIiwiQWRtaW4iXSwiYmlydGhkYXRlIjoiMjAwMS0wNy0xMyIsImZ1bGxfbmFtZSI6Im1hcmsiLCJpYXQiOjE2NTE1OTgyMDcsImV4cCI6MTY1MjAzMDIwNywianRpIjoiZWJhZDI1YzAtNmJiNy00ZTdlLWJmNTYtMmJjZjY2MmNmYjU1In0.vLwMY6yVf9sWW94R7KA5DVDZO3fzLzlDcs9KuVVa0bk",
+						"type": "default",
+						"disabled": true
+					}
+				],
+				"url": {
+					"raw": "{{local-url}}/secured/permit-all",
+					"host": [
+						"{{local-url}}"
+					],
+					"path": [
+						"secured",
+						"permit-all"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "local-url",
+			"value": "localhost:8080",
+			"type": "default"
+		},
+		{
+			"key": "token-name",
+			"value": "x-api-token",
+			"type": "default"
+		},
+		{
+			"key": "token-value",
+			"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJodHRwczovL2V4YW1wbGUuY29tL2lzc3VlciIsInVwbiI6Impkb2VAcXVhcmt1cy5pbyIsImJpcnRoZGF0ZSI6IjIwMDEtMDctMTMiLCJmdWxsX25hbWUiOiJtaWtlIiwiaWF0IjoxNjUxNjM4MDkzLCJleHAiOjE2NTIwNzAwOTMsImp0aSI6Ijc5Yjk4ZmE1LWVmY2ItNGZiZi05NzI1LWZlYTNiZjVjNTg3NiJ9.Fn7untBFcoJCtkBnyODWYMj573YNXAiWegegm3SCYCI",
+			"type": "default"
+		}
+	]
+}
